@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			$(document).ready (function () {  
+               $("#basic-form").validate ();
+
+                $('#file').on('change', function() {
+            const size = 
+               (this.files[0].size / 1024 / 1024).toFixed(2);
+         
+            if (size <= 1) {
+                alert("File must be between the size of 1 MB");
+            } else {
+                alert("file is too large");
+            }
+        });  
+                $("select.salary").change(function(){
+                	var selectSalary=$(this).children("option.select").val();
+                	alert("Your salary is" +selectSalary);
+                });
+                $("#radio");
+                $(":checkbox");
+            
+          });  
+        </script>  
+            <body>    
+               <h4> jQuery Validation Form Example </h4>  
+               <form id = "basic-form" action="" method="post">  
+               <p>  
+               <label for= "name"> First Name </label>  
+               <input id="name" name="name" minlength="3" type="text" required> </p>  
+               <p>  
+               <label for = "name"> Last Name  </label>  
+               <input type = "text" id="name" name="name" minlength="5" required>  
+               </p>  
+               <p>  
+               <label for="email"> E-Mail  </label>  
+               <input id="email" type="email" name="email" required>  
+               </p>  
+               <p>
+               	<label for="phone">Phone </label>
+               	<input type="number" type="phone" name="phone" minlenght="10" required>
+               <p>  
+               <label for="password"> Password </label>  
+               <input type="number" name="password" id="password" required >  
+               </p>  
+               
+               <input id="file" type="file" name="file">
+               <p id="output"></p>
+               <h3>Select the salary</h3>
+               <select class="salary">
+               	   <option>None</option>
+               	   <option>20,000</option>
+               	   <option>30,000</option>
+               	   <option>40,000</option>
+               	   <option>50,000</option>
+               	   <option>50,000</option>
+               	  
+               	</select>
+               	<h3>Checkboxex</h3>
+               	HTML: <input type ="checkbox" name="html" value="html"><br>
+               	CSS: <input type="checkbox" name="css" value="css"><br>
+               	JS: <input type="checkbox" name="js" value="js"><br>
+               	Jquery: <input type="checkbox" name="jquery" value="jquery"><br>
+               	PHP: <input type="checkbox" name="php" value="php"><br>
+               	
+               	<h3>Radio buttons</h3>
+               	Male:<input type="radio" name="sex" value="m"><br>
+                Female<input type="radio" name="sex" value="f"><br>
+             
+                <br>
+               	<p>  
+               <input class="submit" type="submit" value="SUBMIT">  
+               </p>  
+               </form>  
+           </body>
+       </head>
