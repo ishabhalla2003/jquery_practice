@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			$ (document).ready(function(){
+				$("form").change(function(){
+					alert("My name is " +$(this).val());
+				});
+               
+                $("p").click(function(){
+                $(this).hide();
+          });
+                $("#btn2").click(function(){
+                $("h2").html("Hello World");
+                });
+                $("select.country").change(function(){
+                	var selectedCountry= $(this).children("option:selected").val();
+                	alert("You selected " +selectedCountry);
+                });
+                $(":radio").change(function(){
+                	alert("I am a " +$(this).val() );
+       
+                });
+                $("#btn1").click(function(){
+                	$("ul").append("<li>Maths</li>");
+                	$("ul").append("<li>S.St</li>");
+                	$("ul").append("<li>Science</li>");
+                });
+
+           
+                $(":checkbox").change(function(){
+                	alert("My favourite fruit is " +$(this).val());
+                });
+
+                 $('#file').on('change', function() {
+                    const size = 
+                    (this.files[0].size / 1024 / 1024).toFixed();
+         
+                    if (size < 1) {
+                      alert("File is OK");
+                    } else {
+                      alert("file is too large");
+                    }
+                    
+                 });  
+                 });
+          </script>
+	</head>
+	      <body>
+
+	      	<form action=""> 
+	      		<br>
+	      	     Name : <input type="text" name="firstname">
+	      		<br>
+	      		
+	      		<input type="button" name="submit" value="Submit">
+	      		<br>
+	      		<label><h4>Select the country from Dropdown</h4> <br> </label>
+	      		<select class ="country">
+	      			<option>India</option>
+	      			<option>U.S.A</option>
+	      			<option>Austraila</option>
+	      			<option>Africa</option>
+	      			<option>Brazil</option>
+	      			<option>Canada</option>
+	      		</select>
+	      		<br>
+	      		<h3>Radio Button</h3>
+	      		Male : <input type="radio" name="sex" value="Male">
+	      		<br>
+	      		Female : <input type="radio" name="sex" value="Female">
+	      		<br>
+	      		<input type="button" value="Submit">
+	      		<h3>Checkboxes</h3>
+	      		Apple <input type= "checkbox" name="fruit" value="apple"><br>
+	      		Mango <input type= "checkbox" name="fruit" value="mango"><br>
+	      		Banana <input type= "checkbox" name="fruit" value="Banana"><br>
+	      		Litchi <input type= "checkbox" name="fruit" value="litchi"><br>
+	      		Grapes <input type= "checkbox" name="fruit" value="grapes"><br>
+	      		<br>
+	      		<input id="file" type="file" name="file">
+               <p id="output"></p>
+	      	</form>
+	      		<br>
+	      		<h4>Hide the text</h4>
+	      		<p>Click on me</p>
+	      		<button id="btn2">Change the content</button>
+	      		<h4>Change Html text</h4>
+	      		<h2>India is a large country </h2>
+	      		<h3>Lists</h3>
+	      		<ul>
+	      			<li>English</li>
+	      			<li>Hindi</li>
+	      			<li>Punjabi</li>
+	      			
+	      		</ul>
+	      		<button id="btn1">Add subjects</button>
+	      		
+	      	</body>
+	      	</html>
+
+
+	      		
+
+	       
+	      </body>
+	      </html>
+  
