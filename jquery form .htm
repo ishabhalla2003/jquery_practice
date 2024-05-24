@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			$(document).ready (function () {  
+               $("#basic-form").validate ();
+
+                $('#file').on('change', function() {
+            const size = 
+               (this.files[0].size / 1024 / 1024).toFixed(2);
+         
+            if (size < 1) {
+                alert("File must be between the size of 1 MB");
+            } else {
+                alert("file is too large");
+            }
+        
+               $(":radio").change(function(){
+                	alert("I am a " +$(this).val() );
+       
+                });
+
+                $(":checkbox").change(function(){
+                	alert("My favourite fruit is " +$(this).val());
+                });
+                $("select.salary").change(function(){
+                	var selectedSalary= $(this).children("option:selected").val();
+                	alert("You selected " +selectedSalary);
+                });
+                            
+          });  
+        </script>
+            <body>    
+               <h4> jQuery Validation Form Example </h4>  
+               <form id = "basic-form" action="" method="post">  
+               <p>  
+               <label for= "name"> First Name </label>  
+               <input id="name" name="name" minlength="3" type="text" required> </p>  
+               <p>  
+               <label for = "name"> Last Name  </label>  
+               <input type = "text" id="name" name="name" minlength="5" required>  
+               </p>  
+               <p>  
+               <label for="email"> E-Mail  </label>  
+               <input id="email" type="email" name="email" required>  
+               </p>  
+               <p>
+               	<label for="phone">Phone </label>
+               	<input type="number" type="phone" name="phone" minlenght="10" required>
+               <p>  
+               <label for="password"> Password </label>  
+               <input type="number" name="password" id="password" required >  
+               </p>  
+               </form>
+               <input id="file" type="file" name="file">
+               <p id="output"></p>
+               <h3>Radio Buttons</h3>
+               Male : <input type="radio" name="sex" value="Male">
+               <br>
+               Female : <input type="radio" name="sex" value="Female">
+               <br>
+               <h3>Skills</h3>
+	      		HTML <input type= "checkbox" name="fruit" value="HTML"><br>
+	      		CSS <input type= "checkbox" name="fruit" value="CSS"><br>
+	      		JS <input type= "checkbox" name="fruit" value="JS"><br>
+	      		Jquery <input type= "checkbox" name="fruit" value="Jquery"><br>
+	      		PHP <input type= "checkbox" name="fruit" value="PHP"><br>
+	      		<br>
+	      		<select class ="salary">
+	      			<option>None</option>
+	      			<option>20,000</option>
+	      			<option>30,000</option>
+	      			<option>40,000</option>
+	      			<option>50,000</option>
+	      			<option>60,000</option>
+	      		</select>
+	      		<br>
+	      		<br>
+	      		<button name="submit" value="Submit">Submit</button>
+
+                
+               
+           </body>
+       </head>
